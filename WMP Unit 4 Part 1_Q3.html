@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+    <script src="../Unit_04-jQuery_1/js/jquery.js"></script>
+    <script>
+        $(function() {
+            $('input[name="registered"]').on('change', function() {
+                const selectedValue = $('input[name="registered"]:checked').val();
+                console.log(selectedValue);
+             });
+
+            // I had no idea how to do this one, so I had to google for the solution
+             $('#Comments').on('keypress', function(e) {
+                const char = String.fromCharCode(e.which);
+                if (!/^[a-zA-Z]$/.test(char)) {
+                    e.preventDefault(); 
+                }
+            });
+
+            $('#btn_submit').on('click', function(e) {
+                if ($('input[name="registered"]:checked').val() !== 'yes') {
+                    alert("pls ensure registered is yes")
+                    e.preventDefault(); 
+                    $('span:contains("Registered:")').addClass('highlight'); 
+                }
+                    
+                else {
+                    $('span:contains("Registered:")').removeClass('highlight');
+                }
+            });
+        });
+
+    </script>
+
+    <style>
+        .highlight {
+            border-style: solid;
+            border-color: yellow;
+            border-width: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="input" method="get">
+        <span>Username:</span>
+        <input type="text" name="user">
+        <br>
+    
+        <span>Registered:</span>
+        <input type="radio" name="registered" value="yes">YES
+        <input type="radio" name="registered" value="no" checked disabled>NO
+        <br>
+    
+        <span>Comments:</span>
+        <br>
+    
+        <textarea id="Comments" cols="40" name="S1" rows="5"></textarea>
+        <br>
+    
+        <input id="btn_submit" type="submit" value="Submit">
+    </form>
+</body>
+</html>

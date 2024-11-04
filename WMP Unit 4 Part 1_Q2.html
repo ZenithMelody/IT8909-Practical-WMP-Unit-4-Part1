@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+    <script src="../Unit_04-jQuery_1/js/jquery.js"></script>
+    <script>
+        $(function() {
+            // had to google from w3schools.com for the function of ul li:list
+            $("#list2 li:last").addClass("highlight");
+        });
+    </script>
+
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+    <ul id="list1">
+        <li class="a">item 1</li>
+        <li class="a">item 2</li>
+        <li class="b">item 3</li>
+        <li class="b">item 4</li>
+    </ul>
+    
+    <ul id="list2">
+        <li class="a">item 1</li>
+        <li class="a">item 2</li>
+        <li class="b">item 3</li>
+        <li class="b">item 4</li>
+    </ul>
+</body>
+</html>
